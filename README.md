@@ -1,29 +1,27 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+## Dot Indonesia Internship Backend Challenge
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+Backend project untuk Challenge Backend Dot Indonesia Internship.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+Aplikasi ini adalah **anonymous chat** (mirip NGL), di mana user bisa menerima pesan anonim dari user lain.
 
-## Description
+## Project Pattern
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Pattern yang saya pakai adalah **Modular Monolith**.
+yaitu:
+
+- Project dibagi per fitur, misalnya `auth`, `messages`, `users`.
+- Bagian `controller` menerima request dari client.
+- Bagian `service` mengerjakan logika utama.
+- Bagian `prisma` dipakai untuk akses database.
+- Bagian `common` dipakai untuk hal umum seperti error handler, decorator, dan format response.
+
+Kenapa saya pilih pattern ini:
+
+1. **Mudah dipahami**: Alur kode jelas dari controller ke service lalu ke database.
+2. **Rapi dan terstruktur**: Kode tidak tercampur, jadi lebih mudah dibaca.
+3. **Mudah dikembangkan**: Kalau fitur bertambah, tinggal tambah module baru.
+4. **Mudah testing**: Karena logic terpisah di service, test unit dan e2e lebih gampang dibuat.
+5. **Cocok untuk belajar dan production awal**: Tidak terlalu rumit, tapi tetap mengikuti praktik yang baik di NestJS.
 
 ## Project setup
 
